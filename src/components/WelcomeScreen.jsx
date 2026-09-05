@@ -35,7 +35,7 @@ export default function WelcomeScreen({ onEnter }) {
           </span>
         </button>
 
-        <p className="welcome__footer">Made with ♥ by BBA Students · 2026</p>
+        <p className="welcome__footer">Made with ❤️ by Dhruv Varshney · 2026</p>
       </div>
     </main>
   );
