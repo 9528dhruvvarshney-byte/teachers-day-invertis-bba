@@ -18,7 +18,12 @@ const hotspots = [
     id: "blackboard",
     label: "The Blackboard",
     hint: "Things our teachers taught us",
-    style: { left: "29.9%", top: "9.4%", width: "33.4%", height: "32%" },
+    style: {
+      left: "29.9%",
+      top: "9.4%",
+      width: "33.3%",
+      height: "34.4%",
+    },
   },
   {
     id: "clock",

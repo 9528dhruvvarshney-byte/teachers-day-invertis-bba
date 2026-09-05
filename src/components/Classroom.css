@@ -124,48 +124,54 @@
 }
 
 @media (max-width: 640px) {
+  .classroom {
+    padding: 16px 10px 28px;
+  }
+
+  .classroom__banner {
+    margin-bottom: 12px;
+  }
+
+  .classroom__banner-title {
+    font-size: 0.82rem;
+  }
+
+  .classroom__banner-sub {
+    font-size: 1rem;
+  }
+
+  /* Keep the illustrated classroom visible on mobile */
   .classroom__scene-wrap {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .classroom__scene {
+    width: 100%;
+    aspect-ratio: 1440 / 960;
+    border-radius: 14px;
+  }
+
+  /* Hide the old mobile object list */
+  .classroom__mobile-list {
     display: none;
   }
 
-  .classroom__mobile-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    width: 100%;
-    max-width: 480px;
-  }
-
-  .mobile-item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-    text-align: left;
-    border: 1px solid rgba(201, 162, 75, 0.35);
-    background: rgba(244, 236, 216, 0.05);
-    color: var(--chalk);
-    border-radius: var(--radius-md);
-    padding: 14px 16px;
+  .hotspot {
+    min-width: 44px;
     min-height: 44px;
-    transition: background 0.2s ease, border-color 0.2s ease;
   }
 
-  .mobile-item:hover,
-  .mobile-item:focus-visible {
-    background: rgba(201, 162, 75, 0.12);
-    border-color: var(--gold-soft);
+  .hotspot__label {
+    display: none;
   }
 
-  .mobile-item__label {
-    font-weight: 700;
-    font-size: 0.98rem;
-  }
-
-  .mobile-item__hint {
-    font-family: var(--font-hand);
-    font-size: 1rem;
-    color: var(--gold-soft);
+  .hotspot__dot {
+    width: 11px;
+    height: 11px;
+    top: 7px;
+    left: 7px;
   }
 }
 

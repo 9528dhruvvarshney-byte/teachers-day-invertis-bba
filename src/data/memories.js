@@ -16,47 +16,47 @@ const memories = [
   {
     id: "memory-1",
     title: "Memory 01",
-    image: "/assets/memories/memory-1.jpeg",
+    image: `${import.meta.env.BASE_URL}assets/memories/memory-1.jpeg`,
   },
   {
     id: "memory-2",
     title: "Memory 02",
-    image: "/assets/memories/memory-2.jpeg",
+    image: `${import.meta.env.BASE_URL}assets/memories/memory-2.jpeg`,
   },
   {
     id: "memory-3",
     title: "Memory 03",
-    image: "/assets/memories/memory-3.jpeg",
+    image: `${import.meta.env.BASE_URL}assets/memories/memory-3.jpeg`,
   },
   {
     id: "memory-4",
     title: "Memory 04",
-    image: "/assets/memories/memory-4.jpeg",
+    image: `${import.meta.env.BASE_URL}assets/memories/memory-4.jpeg`,
   },
   {
     id: "memory-5",
     title: "Memory 05",
-    image: "/assets/memories/memory-5.jpeg",
+    image: `${import.meta.env.BASE_URL}assets/memories/memory-5.jpeg`,
   },
   {
     id: "memory-6",
     title: "Memory 06",
-    image: "/assets/memories/memory-6.jpeg",
+    image: `${import.meta.env.BASE_URL}assets/memories/memory-6.jpeg`,
   },
-   {
+  {
     id: "memory-7",
     title: "Memory 07",
-    image: "/assets/memories/memory-7.jpeg",
+    image: `${import.meta.env.BASE_URL}assets/memories/memory-7.jpeg`,
   },
   {
     id: "memory-8",
     title: "Memory 08",
-    image: "/assets/memories/memory-8.jpeg",
+    image: `${import.meta.env.BASE_URL}assets/memories/memory-8.jpeg`,
   },
-   {
+  {
     id: "memory-9",
     title: "Memory 09",
-    image: "/assets/memories/memory-9.jpeg",
+    image: `${import.meta.env.BASE_URL}assets/memories/memory-9.jpeg`,
   },
 ];
 
