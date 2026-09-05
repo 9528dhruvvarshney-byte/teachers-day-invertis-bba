@@ -1,0 +1,116 @@
+.final {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(201, 162, 75, 0.14), transparent 55%),
+    linear-gradient(180deg, #1c2e25 0%, #101a14 100%);
+  text-align: center;
+}
+
+.final__content {
+  max-width: 620px;
+}
+
+.final__dismissed {
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  color: var(--gold-soft);
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease 0s forwards;
+}
+
+.final__heading {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: var(--chalk);
+  margin-bottom: 26px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease 0.1s forwards;
+}
+
+.final__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.final__body p {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--cream-soft);
+  opacity: 0;
+  animation: riseFade 0.6s ease forwards;
+}
+
+.final__closing {
+  font-size: 1.1rem;
+  color: var(--cream-soft);
+  margin-bottom: 22px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease 1.4s forwards;
+}
+
+.final__signoff {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+  color: var(--gold-soft);
+  margin-bottom: 8px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease 1.7s forwards;
+}
+
+.final__from {
+  font-size: 0.95rem;
+  color: rgba(244, 236, 216, 0.65);
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease 2s forwards;
+}
+
+.final__return {
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--chalk);
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 999px;
+  min-height: 44px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease 2.2s forwards;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.final__return:hover,
+.final__return:focus-visible {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes riseFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .final__dismissed,
+  .final__heading,
+  .final__body p,
+  .final__closing,
+  .final__signoff,
+  .final__from,
+  .final__return {
+    animation: none;
+    opacity: 1;
+  }
+}

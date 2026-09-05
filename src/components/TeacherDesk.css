@@ -1,0 +1,267 @@
+.desk-letter {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.desk-letter__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  color: var(--wood);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.desk-letter__stamp {
+  font-weight: 800;
+}
+
+.desk-letter__date {
+  font-family: var(--font-hand);
+  font-size: 1.1rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.desk-letter__selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  background: rgba(107, 66, 38, 0.07);
+  border: 1px solid rgba(107, 66, 38, 0.16);
+  border-radius: var(--radius-md);
+}
+
+.desk-letter__selector label {
+  flex: 1;
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  color: var(--wood);
+}
+
+.desk-letter__select {
+  min-height: 44px;
+  max-width: 280px;
+  padding: 9px 34px 9px 13px;
+  border: 1px solid var(--wood);
+  border-radius: 999px;
+  background: var(--chalk);
+  color: var(--charcoal);
+  font: 600 0.92rem var(--font-body);
+  cursor: pointer;
+}
+
+.desk-note {
+  position: relative;
+  padding: 26px;
+  background: #f5eddc;
+  color: var(--charcoal);
+  border: 1px solid rgba(107, 66, 38, 0.2);
+  border-radius: 3px;
+  box-shadow: 0 14px 35px rgba(40, 25, 15, 0.14);
+  animation: noteIn 0.45s ease both;
+}
+
+.desk-note::before,
+.desk-note::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(107, 66, 38, 0.18);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.desk-note::before {
+  top: 13px;
+  right: 16px;
+}
+
+.desk-note::after {
+  bottom: 13px;
+  left: 16px;
+}
+
+@keyframes noteIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) rotate(-0.5deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
+.desk-note__profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed rgba(107, 66, 38, 0.3);
+}
+
+.desk-note__photo {
+  flex: none;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 3px solid var(--gold-soft);
+  border-radius: 50%;
+  background: var(--wood);
+  color: var(--chalk);
+  font: 1.25rem var(--font-display);
+}
+
+.desk-note__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.desk-note__profile h3 {
+  margin: 0 0 3px;
+  font-size: 1.35rem;
+}
+
+.desk-note__profile p {
+  margin: 0;
+  color: var(--wood);
+  font-size: 0.9rem;
+}
+
+.desk-note__paper {
+  padding: 24px 8px 22px;
+}
+
+.desk-note__greeting {
+  margin: 0 0 12px;
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  color: var(--wood);
+}
+
+.desk-note__message {
+  max-width: 680px;
+  margin: 0;
+  font: italic 1.25rem/1.65 var(--font-display);
+}
+
+.desk-note__closing {
+  margin: 20px 0 0;
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  color: var(--wood);
+}
+
+.desk-note__closing span {
+  font-size: 1.35rem;
+}
+
+.desk-note__memories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.desk-note__memory,
+.desk-note__award {
+  padding: 14px;
+  border: 1px solid rgba(107, 66, 38, 0.16);
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 4px;
+}
+
+.desk-note__memory p,
+.desk-note__award p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.desk-note__label {
+  display: block;
+  color: var(--wood);
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.desk-note__award {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.desk-note__award-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--gold-soft);
+  border-radius: 50%;
+  color: var(--wood);
+  font-size: 1rem;
+}
+
+.desk-note__award p {
+  font-weight: 700;
+}
+
+@media (max-width: 520px) {
+  .desk-letter__top {
+    padding: 0 2px;
+  }
+
+  .desk-letter__selector {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .desk-letter__select {
+    width: 100%;
+    max-width: none;
+  }
+
+  .desk-note {
+    padding: 20px 16px;
+  }
+
+  .desk-note__profile {
+    align-items: flex-start;
+  }
+
+  .desk-note__profile h3 {
+    font-size: 1.15rem;
+  }
+
+  .desk-note__message {
+    font-size: 1.08rem;
+  }
+
+  .desk-note__memories {
+    grid-template-columns: 1fr;
+  }
+
+  .desk-note__award {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .desk-note {
+    animation: none;
+  }
+}

@@ -1,0 +1,176 @@
+.classroom {
+  min-height: 100vh;
+  width: 100%;
+  background: #17251d;
+  padding: 22px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.classroom__banner {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.classroom__banner-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  color: var(--gold-soft);
+}
+
+.classroom__banner-sub {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  color: var(--cream-soft);
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+.classroom__scene-wrap {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  justify-content: center;
+}
+
+.classroom__scene {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1440 / 960;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.scene-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Hotspots: real buttons, positioned to match the illustration.
+   Always show a small gold dot so the object reads as interactive;
+   the full label appears on hover/focus for clarity + accessibility. */
+.hotspot {
+  position: absolute;
+  border: none;
+  background: rgba(244, 236, 216, 0.06);
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 6px;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.hotspot:hover,
+.hotspot:focus-visible {
+  background: rgba(244, 236, 216, 0.14);
+  box-shadow: inset 0 0 0 2px var(--gold-soft);
+}
+
+.hotspot__dot {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold-soft);
+  box-shadow: 0 0 0 4px rgba(224, 197, 131, 0.25);
+  animation: dotPulse 2.6s ease-in-out infinite;
+}
+
+.hotspot__label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: clamp(0.68rem, 1.1vw, 0.85rem);
+  color: var(--chalk);
+  background: rgba(34, 29, 24, 0.72);
+  padding: 4px 10px;
+  border-radius: 999px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.hotspot:hover .hotspot__label,
+.hotspot:focus-visible .hotspot__label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(224, 197, 131, 0.25); }
+  50% { box-shadow: 0 0 0 8px rgba(224, 197, 131, 0.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hotspot__dot { animation: none; }
+}
+
+/* Mobile object list — hidden by default (desktop/tablet show the scene) */
+.classroom__mobile-list {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .classroom__scene-wrap {
+    display: none;
+  }
+
+  .classroom__mobile-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .mobile-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    text-align: left;
+    border: 1px solid rgba(201, 162, 75, 0.35);
+    background: rgba(244, 236, 216, 0.05);
+    color: var(--chalk);
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+    min-height: 44px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .mobile-item:hover,
+  .mobile-item:focus-visible {
+    background: rgba(201, 162, 75, 0.12);
+    border-color: var(--gold-soft);
+  }
+
+  .mobile-item__label {
+    font-weight: 700;
+    font-size: 0.98rem;
+  }
+
+  .mobile-item__hint {
+    font-family: var(--font-hand);
+    font-size: 1rem;
+    color: var(--gold-soft);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+  .classroom__scene {
+    max-width: 760px;
+  }
+}

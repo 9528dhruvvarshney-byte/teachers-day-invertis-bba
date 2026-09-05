@@ -1,0 +1,124 @@
+.polaroid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 20px;
+  padding: 8px 4px;
+}
+
+.polaroid {
+  background: var(--chalk);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  padding: 10px 10px 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: rotate(var(--tilt, 0deg));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 44px;
+}
+
+.polaroid:hover,
+.polaroid:focus-visible {
+  transform: rotate(0deg) scale(1.04);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.22);
+}
+
+.polaroid__photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #9fb9a8, #7a9483);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.polaroid__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroid__placeholder {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(34, 29, 24, 0.55);
+  text-align: center;
+  padding: 0 10px;
+}
+
+.polaroid__caption {
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  color: var(--charcoal);
+  display: block;
+  text-align: center;
+}
+
+.polaroid-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  animation: cardIn 0.35s ease both;
+}
+
+.polaroid-detail__photo {
+  width: min(100%, 360px);
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #9fb9a8, #7a9483);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 8px solid var(--chalk);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.polaroid-detail__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroid-detail__title {
+  font-size: 1.3rem;
+  margin-top: 6px;
+}
+
+.polaroid-detail__caption {
+  font-size: 0.95rem;
+  color: var(--wood);
+  max-width: 46ch;
+}
+
+.polaroid-detail__quote {
+  font-family: var(--font-hand);
+  font-size: 1.2rem;
+  color: var(--charcoal);
+  max-width: 46ch;
+}
+
+.polaroid-detail__back {
+  margin-top: 10px;
+  border: 1px solid var(--wood);
+  background: transparent;
+  color: var(--wood);
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 999px;
+  min-height: 44px;
+}
+
+.polaroid-detail__back:hover,
+.polaroid-detail__back:focus-visible {
+  background: var(--wood);
+  color: var(--chalk);
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

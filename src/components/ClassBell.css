@@ -1,0 +1,111 @@
+.bell-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+  padding: 10px 0 6px;
+}
+
+.bell-shape {
+  position: relative;
+  width: 110px;
+  height: 120px;
+  border: none;
+  background: none;
+  padding: 0;
+  min-height: 44px;
+  transform-origin: top center;
+}
+
+.bell-shape__dome {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  width: 80px;
+  height: 70px;
+  background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+  border-radius: 50% 50% 10% 10%;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.bell-shape__dome::after {
+  content: "";
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  bottom: -8px;
+  height: 14px;
+  background: var(--gold);
+  border-radius: 8px;
+}
+
+.bell-shape__clapper {
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--wood-dark);
+  transform: translateX(-50%);
+}
+
+.bell-shape--rung {
+  animation: bellSwing 0.6s ease 2;
+}
+
+@keyframes bellSwing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(12deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(6deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.bell-hint {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  color: var(--gold-soft);
+}
+
+.bell-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  animation: fadeIn 0.4s ease both;
+}
+
+.bell-text__line {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--chalk);
+}
+
+.bell-continue {
+  margin-top: 6px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--chalk);
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 999px;
+  min-height: 44px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.bell-continue:hover,
+.bell-continue:focus-visible {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+
+.bell-continue--final {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bell-shape--rung { animation: none; }
+}
